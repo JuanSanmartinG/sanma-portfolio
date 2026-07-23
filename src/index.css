@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0F19;
+  --color-surface: #111827;
+  --color-accent: #6366F1;
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+/* --- Navbar Component --- */
+.nav-header { @apply sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-surface/40; }
+.nav-container { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between; }
+.nav-logo { @apply font-mono font-bold text-lg tracking-wider text-accent cursor-pointer hover:opacity-80 transition-opacity; }
+.nav-menu { @apply hidden md:flex items-center space-x-8 font-sans text-sm font-medium tracking-wide; }
+.nav-link { @apply text-text-secondary hover:text-text-primary transition-colors duration-200; }
+.nav-cta { @apply px-4 py-2 text-xs font-mono text-accent border border-accent/40 rounded hover:bg-accent/10 transition-all duration-200; }
+
+/* --- Hero Component --- */
+.hero-section { @apply py-24 flex flex-col items-center text-center justify-center min-h-[70vh]; }
+.hero-badge { @apply px-3 py-1 text-xs font-mono text-accent bg-accent/10 rounded-full border border-accent/20 mb-6; }
+.hero-title { @apply text-5xl md:text-7xl font-sans font-extrabold tracking-tight max-w-3xl leading-tight; }
+.hero-pitch { @apply mt-6 text-lg md:text-xl text-text-secondary font-sans max-w-2xl leading-relaxed; }
+.hero-cta-group { @apply mt-10 flex flex-col sm:flex-row gap-4 items-center; }
+
+/* --- Projects Section --- */
+.projects-section { @apply py-20 border-t border-surface/40; }
+.projects-header { @apply mb-12 text-left; }
+.projects-title { @apply text-3xl md:text-4xl font-sans font-bold text-text-primary tracking-tight; }
+.projects-subtitle { @apply mt-2 text-text-secondary font-mono text-sm; }
+
+.projects-grid { @apply grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8; }
+.project-card { @apply bg-surface/60 border border-surface rounded-xl p-6 hover:border-accent/50 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1 shadow-lg; }
+.project-badge { @apply text-xs font-mono text-accent bg-accent/10 px-2.5 py-1 rounded-full w-fit mb-4 border border-accent/20; }
+.project-card-title { @apply text-2xl font-bold font-sans text-text-primary mb-3; }
+.project-card-desc { @apply text-text-secondary font-sans text-sm leading-relaxed mb-6 flex-grow; }
+.project-tags-group { @apply flex flex-wrap gap-2 mb-6; }
+.project-tag { @apply text-xs font-mono bg-background/80 text-text-secondary px-2.5 py-1 rounded border border-surface/80; }
+.project-links { @apply flex items-center gap-4 pt-4 border-t border-surface/50 font-mono text-xs; }
+.project-link-primary { @apply px-4 py-2 bg-accent/10 text-accent rounded hover:bg-accent/20 transition-colors duration-200 border border-accent/30; }
+.project-link-secondary { @apply text-text-secondary hover:text-text-primary transition-colors duration-200; }
+
+/* --- Skills Section --- */
+.skills-section { @apply py-20 border-t border-surface/40; }
+.skills-header { @apply mb-12 text-left; }
+.skills-title { @apply text-3xl md:text-4xl font-sans font-bold text-text-primary tracking-tight; }
+.skills-subtitle { @apply mt-2 text-text-secondary font-mono text-sm; }
+
+.skills-grid { @apply grid grid-cols-1 md:grid-cols-3 gap-6; }
+.skills-card { @apply bg-surface/60 border border-surface rounded-xl p-6 hover:border-accent/40 transition-all duration-300; }
+.skills-category-title { @apply text-lg font-bold font-mono text-accent mb-4 pb-2 border-b border-surface/80; }
+.skills-list { @apply flex flex-wrap gap-2; }
+.skill-pill { @apply text-xs font-mono bg-background text-text-primary px-3 py-1.5 rounded-md border border-surface/60; }
+
+/* --- About Section --- */
+.about-section { @apply py-20 border-t border-surface/40; }
+.about-header { @apply mb-8 text-left; }
+.about-title { @apply text-3xl md:text-4xl font-sans font-bold text-text-primary tracking-tight; }
+.about-subtitle { @apply mt-2 text-text-secondary font-mono text-sm; }
+.about-content { @apply bg-surface/40 border border-surface rounded-xl p-8 text-text-secondary font-sans leading-relaxed space-y-4 text-sm md:text-base; }
+.about-highlight { @apply text-text-primary font-medium; }
+
+/* --- Footer Component --- */
+.footer-container { @apply border-t border-surface/40 py-12 mt-20 text-center md:text-left; }
+.footer-content { @apply flex flex-col md:flex-row items-center justify-between gap-6; }
+.footer-brand { @apply font-mono font-bold text-lg text-accent; }
+.footer-copy { @apply text-xs font-mono text-text-secondary mt-1; }
+.footer-links { @apply flex items-center space-x-6 font-mono text-xs text-text-secondary; }
+.footer-link { @apply hover:text-accent transition-colors duration-200; }
