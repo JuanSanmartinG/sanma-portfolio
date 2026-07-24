@@ -10,6 +10,7 @@ function Navbar() {
           <li><a href="#about" className="nav-link">// about</a></li>
           <li><a href="#projects" className="nav-link">// projects</a></li>
           <li><a href="#skills" className="nav-link">// skills</a></li>
+          <li><a href="#contact" className="hover:text-emerald-400 transition-colors">  // contact<a/></li>
         </ul>
 
         <div>
