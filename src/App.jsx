@@ -6,18 +6,20 @@ import Skills from './components/Skills';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { translations } from './data/translations';
 
 function App() {
-  // Initialize theme based on localStorage or user system preferences (defaults to dark)
+  // Theme State
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme === 'dark';
-    }
-    return true; // Default to dark mode if no saved preference
+    return savedTheme ? savedTheme === 'dark' : true;
   });
 
-  // Apply or remove the 'dark' class on <html> whenever darkMode state changes
+  // Language State (por defecto 'en' o lo que esté guardado)
+  const [lang, setLang] = useState(() => {
+    return localStorage.getItem('lang') || 'en';
+  });
+
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {
@@ -29,20 +31,31 @@ function App() {
     }
   }, [darkMode]);
 
-  const toggleTheme = () => {
-    setDarkMode(prev => !prev);
-  };
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+  }, [lang]);
+
+  const toggleTheme = () => setDarkMode(prev => !prev);
+  const toggleLang = () => setLang(prev => (prev === 'en' ? 'es' : 'en'));
+
+  // Objeto de traducción activo según el idioma seleccionado
+  const t = translations[lang];
 
   return (
-    // 'bg-slate-950 text-slate-100' for Dark Mode | 'bg-slate-50 text-slate-900' for Light Mode
-    <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
-      <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-      <Hero />
-      <Projects />
-      <Skills />
-      <About />
-      <Contact />
-      <Footer />
+    <div className="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
+      <Navbar 
+        darkMode={darkMode} 
+        toggleTheme={toggleTheme} 
+        lang={lang} 
+        toggleLang={toggleLang} 
+        t={t.nav}
+      />
+      <Hero t={t.hero} />
+      <Projects t={t.projects} />
+      <Skills t={t.skills} />
+      <About t={t.about} />
+      <Contact t={t.contact} />
+      <Footer t={t.footer} />
     </div>
   );
 }

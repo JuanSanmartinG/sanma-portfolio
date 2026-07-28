@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Dark Slate Background -->
+  <rect width="64" height="64" rx="16" fill="#090d16" />
+  
+  <!-- Purple Accent Border -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#a855f7" stroke-width="2.5" opacity="0.6" />
+  
+  <!-- Monospace 's_' branding -->
+  <text 
+    x="50%" 
+    y="52%" 
+    dominant-baseline="middle" 
+    text-anchor="middle" 
+    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
+    font-weight="800" 
+    font-size="28" 
+    fill="#c084fc"
+  >s_</text>
+</svg>

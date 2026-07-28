@@ -1,18 +1,18 @@
 import React from 'react';
 import { skillsData } from '../data/skillsData';
 
-function Skills() {
+function Skills({ t }) {
   return (
     <section id="skills" className="py-20 px-6 max-w-6xl mx-auto">
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-purple-600 dark:text-purple-400 font-mono text-xl">//</span>
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-wide">
-            Tech Stack & Capabilities
+            {t.title}
           </h2>
         </div>
         <p className="text-slate-600 dark:text-slate-400 font-mono text-sm">
-          Core technologies, frameworks, and tools I build with.
+          {t.subtitle}
         </p>
       </div>
 
