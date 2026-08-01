@@ -1,16 +1,39 @@
-# React + Vite
+# 🚀 Personal Portfolio | Juan David Sanmartin Gómez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fast, and fully responsive developer portfolio built to showcase full-stack projects, technical skills, and background. Built with React, Tailwind CSS, and Vite, featuring multi-language support (English/Spanish), dynamic theme switching, and optimized performance.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live_Demo-sanma--portfolio.vercel.app-7c3aed?style=for-the-badge&logo=vercel)](https://sanma-portfolio.vercel.app)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **🌐 Multi-Language Support (EN / ES):** Instant language switching for international accessibility.
+- **🌙 Light & Dark Mode:** Smooth theme transitions with persisted preferences and system defaults.
+- **📱 Mobile-First & Responsive:** Custom responsive navigation drawer and layout adjustments for all screen sizes.
+- **📋 One-Click Email Copy:** Clipboard API integration for quick contact retrieval.
+- **📩 Functional Contact Form:** Integrated with Formspree for serverless message delivery.
+- **⚡ High Performance & Accessibility:** Audited with Lighthouse achieving **100 SEO**, **100 Best Practices**, and **98 Accessibility**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack & Tools
+
+- **Frontend Framework:** React (Vite)
+- **Styling:** Tailwind CSS
+- **Form Handling:** Formspree API
+- **Deployment & Hosting:** Vercel
+- **Icons & UI:** Custom SVGs & Lucide React
+
+---
+
+## 🚀 Local Development
+
+To run this project locally on your machine:
+
+1. **Clone the repository:**
+   git clone [https://github.com/juandsanmarting06/sanma-portfolio.git](https://github.com/juandsanmarting06/sanma-portfolio.git)
+   cd sanma-portfolio
