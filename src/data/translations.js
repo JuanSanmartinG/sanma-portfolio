@@ -68,7 +68,9 @@ export const translations = {
       msgPlaceholder: "What's on your mind?",
       btnSending: "Sending...",
       btnSend: "Send Message 🚀",
-      errorMsg: "Oops! Something went wrong. Please try again or email me directly."
+      errorMsg: "Oops! Something went wrong. Please try again or email me directly.",
+      copyBtn: "Copy 📋",
+      copiedBtn: "Copied! 📋"
     },
     footer: {
       rights: "All rights reserved.",
@@ -144,7 +146,9 @@ export const translations = {
       msgPlaceholder: "¿En qué estás pensando?",
       btnSending: "Enviando...",
       btnSend: "Enviar Mensaje 🚀",
-      errorMsg: "¡Ups! Algo salió mal. Por favor intenta de nuevo o envíame un correo directo."
+      errorMsg: "¡Ups! Algo salió mal. Por favor intenta de nuevo o envíame un correo directo.",
+      copyBtn: "Copiar 📋",
+      copiedBtn: "Copiado! 📋"
     },
     footer: {
       rights: "Todos los derechos reservados.",

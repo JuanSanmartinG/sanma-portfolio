@@ -2,6 +2,15 @@ import React, { useState } from 'react';
 
 export default function Contact({ t }) {
   const [status, setStatus] = useState('IDLE');
+  const [copied, setCopied] = useState(false);
+
+  const email = 'juansanmartingomez@gmail.com';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,10 +59,20 @@ export default function Contact({ t }) {
           </div>
 
           <div className="space-y-4 font-mono text-sm text-slate-700 dark:text-gray-300 mb-6 md:mb-0">
-            <div className="flex items-center gap-3">
+            {/* Email Row with Copy Button */}
+            <div className="flex items-center gap-3 flex-wrap">
               <span className="text-purple-600 dark:text-purple-400">📧</span>
-              <span>juansanmartingomez@gmail.com</span>
+              <span>{email}</span>
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="px-2 py-0.5 text-xs rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-600 dark:hover:text-purple-400 transition-all font-semibold active:scale-95"
+                aria-label="Copy email"
+              >
+                {copied ? t.copiedBtn : t.copyBtn}
+              </button>
             </div>
+
             <div className="flex items-center gap-3">
               <span className="text-purple-600 dark:text-purple-400">📍</span>
               <span>Bogotá, Colombia</span>
