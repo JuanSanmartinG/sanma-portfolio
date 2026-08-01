@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Navbar({ darkMode, toggleTheme, lang, toggleLang, t }) {
-  return (
-    <header className="flex justify-between items-center px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
-      <div className="text-purple-600 dark:text-purple-400 font-mono font-bold">
-        sanma.dev_
-      </div>
+  // 1. State to track if mobile menu is open or closed
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <div className="flex items-center gap-6">
-        <ul className="flex gap-6 text-sm font-mono text-slate-700 dark:text-slate-300">
+  return (
+    <header className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+      <div className="flex justify-between items-center px-6 py-4">
+        {/* Logo */}
+        <div className="text-purple-600 dark:text-purple-400 font-mono font-bold">
+          sanma.dev_
+        </div>
+
+        {/* 2. Desktop Navigation (Hidden on mobile with 'hidden', visible on desktop with 'md:flex') */}
+        <ul className="hidden md:flex gap-6 text-sm font-mono text-slate-700 dark:text-slate-300">
           <li><a href="#about" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{t.about}</a></li>
           <li><a href="#projects" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{t.projects}</a></li>
           <li><a href="#skills" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{t.skills}</a></li>
           <li><a href="#contact" className="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">{t.contact}</a></li>
         </ul>
 
+        {/* Action Buttons */}
         <div className="flex items-center gap-2">
           {/* Language Toggle Button */}
           <button
@@ -32,8 +38,61 @@ export default function Navbar({ darkMode, toggleTheme, lang, toggleLang, t }) {
           >
             {darkMode ? '☀️' : '🌙'}
           </button>
+
+          {/* 3. Mobile Hamburger Button (Visible on mobile, hidden on desktop with 'md:hidden') */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle mobile menu"
+            className="md:hidden p-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors text-sm font-mono font-bold"
+          >
+            {isMenuOpen ? '✕' : '☰'}
+          </button>
         </div>
       </div>
+
+      {/* 4. Mobile Dropdown Menu (Appears below the bar when isMenuOpen is true) */}
+      {isMenuOpen && (
+        <div className="md:hidden px-6 pb-4 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95">
+          <ul className="flex flex-col gap-3 pt-3 text-sm font-mono text-slate-700 dark:text-slate-300">
+            <li>
+              <a 
+                href="#about" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1"
+              >
+                {t.about}
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#projects" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1"
+              >
+                {t.projects}
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#skills" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1"
+              >
+                {t.skills}
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="block hover:text-purple-600 dark:hover:text-purple-400 transition-colors py-1"
+              >
+                {t.contact}
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
